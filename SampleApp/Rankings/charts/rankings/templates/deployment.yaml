@@ -20,4 +20,4 @@ spec:
         imagePullPolicy: Never
         env:
         - name: ConnectionStrings__RankingsContext
-          value: "Server=host.docker.internal\\SQLEXPRESS;Database=Rankings;User Id=testuser;Password=martin123!;MultipleActiveResultSets=true"
+          value: {{ .Values.connectionString }}
