@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rankings
+  name: rankings
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rankings
+  template:
+    metadata:
+      labels:
+        app: rankings
+    spec:
+      containers:
+      - image: rankingsapp:latest
+        name: rankingsapp
+        imagePullPolicy: Never
+        env:
+        - name: ConnectionStrings__RankingsContext
+          value: "Server=host.docker.internal\\SQLEXPRESS;Database=Rankings;User Id=testuser;Password=martin123!;MultipleActiveResultSets=true"
