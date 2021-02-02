@@ -72,6 +72,38 @@ marp: true
 
 ---
 
+### Helm demo
+
+<!-- 
+
+helm create rankings
+
+helm install rankings-instance rankings
+
+kubectl create service clusterip rankings --tcp=80:80 --dry-run -o yaml
+
+helm upgrade rankings-instance .\rankings\
+
+helm repo list
+
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+
+helm search repo ingress
+
+helm install myingress ingress-nginx/ingress-nginx
+
+-->
+
+---
+
+## Storage
+
++ PersistentVolume
++ PersistentVolumeClaim
++ StorageClass
+
+---
+
 ## Lens
 
 ![width:800px](https://k8slens.dev/images/header-lens.png)
