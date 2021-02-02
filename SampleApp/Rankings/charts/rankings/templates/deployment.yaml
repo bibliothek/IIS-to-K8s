@@ -17,7 +17,14 @@ spec:
       containers:
       - image: rankingsapp:latest
         name: rankingsapp
+        volumeMounts: 
+        - mountPath: "/root/.aspnet/DataProtection-Keys"
+          name: rankings-volume
         imagePullPolicy: Never
         env:
         - name: ConnectionStrings__RankingsContext
           value: {{ .Values.connectionString }}
+      volumes:
+      - name: rankings-volume
+        persistentVolumeClaim:
+          claimName: rankings-pvc
